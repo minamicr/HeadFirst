@@ -15,9 +15,8 @@ public class ForecastDisplay implements Observer, DisplayElement {
 
   @Override
   public void update(Observable obs, Object arg) {
-    WeatherData weatherData;
     if (obs instanceof WeatherData){
-      weatherData = (WeatherData)obs;
+      WeatherData weatherData = (WeatherData)obs;
       lastPressure = currentPressure;
       currentPressure = weatherData.getPressure();
     }
