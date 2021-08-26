@@ -2,19 +2,19 @@ package com.abs.factory.pattern.pizza;
 
 import com.abs.factory.pattern.ingredients.factory.IngredientsFactory;
 
-public class CheesePizza extends Pizza {
+public class ClamPizza extends Pizza{
   IngredientsFactory ingredientsFactory;
 
-  public CheesePizza(IngredientsFactory ingredientsFactory){
+  public ClamPizza(IngredientsFactory ingredientsFactory){
     this.ingredientsFactory = ingredientsFactory;
     prepare();
   }
 
-  public void prepare(){
-    System.out.println("Preparing cheese pizza");
+  @Override
+  public void prepare() {
+    System.out.println("Preparing clam pizza");
     dough = ingredientsFactory.createDough();
     sauce = ingredientsFactory.createSauce();
-    cheese = ingredientsFactory.createCheese();
+    clam = ingredientsFactory.createClam();
   }
-
 }
